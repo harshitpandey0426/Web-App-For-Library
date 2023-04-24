@@ -1,5 +1,5 @@
 import React from 'react'
-
+//it will display 2 diagnol image and a text
 function Heros() {
     return (
         <div>

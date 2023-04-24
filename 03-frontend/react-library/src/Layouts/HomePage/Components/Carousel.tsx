@@ -2,6 +2,7 @@ import React from 'react'
 import ReturnBook from './ReturnBook'
 import { useEffect, useState } from 'react'
 import BookModel from '../../../models/BookModel'
+import SpinnerLoading from './../../Utils/SpinnerLoading'
 import { error } from 'console';
 
 function Carousel() {
@@ -13,11 +14,12 @@ function Carousel() {
     //will be triggered only when something inside array changes, [] means it will be triggered once
     useEffect(() =>{
         const fetchBooks = async () => {
-            const baseUrl: string = "http://localhost:8080/"
+            const baseUrl: string = "http://localhost:8080/api/books"
             const url: string = `${baseUrl}?page=0&size=9`;
 
             //fetch comes in js by default
             const response = await fetch(url);
+            console.log("+++++++",response)
 
             if(!response.ok){
                 throw new Error("Something went wrong");
@@ -55,9 +57,7 @@ function Carousel() {
 
     if(isLoading){
         return (
-            <div className='container m-5'>
-                <p>Loading...</p>
-            </div>
+            <SpinnerLoading/>
         )
     }
 
