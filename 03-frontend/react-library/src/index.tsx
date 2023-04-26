@@ -11,6 +11,6 @@ root.render(
   // it says we can now use route inside the component App
   <BrowserRouter>
     <App />
-  </BrowserRouter>
+ </BrowserRouter>
 );
 

@@ -4,13 +4,32 @@ import Navbar from './Layouts/NavbarAndFooter/Navbar';
 import Footer from './Layouts/NavbarAndFooter/Footer';
 import HomePage from './Layouts/HomePage/HomePage';
 import SearchBook from './Layouts/SearchBooksPage/SearchBookPage'
+import  { Route}  from 'react-router-dom';
+import SearchBookPage from './Layouts/SearchBooksPage/SearchBookPage';
+import { Redirect, Switch } from 'react-router';
 
 function App() {
   return (
-    <div>
+    <div className='d-flex flex-column min-vh-100'>
     <Navbar/>
-    {/* <HomePage/> */}
-    <SearchBook/>
+    <div className='flex-grow-1'>
+    {/* switch is needed because with /search '/'  conntent(HomePage) will also be loaded */}
+    <Switch>
+
+    <Route path='/' exact>
+      <Redirect to = '/home'/>
+    </Route>
+
+    <Route path='/home'>
+      <HomePage/>
+    </Route>
+
+    <Route path='/search'>
+    <SearchBookPage/>
+    </Route>
+
+    </Switch>
+    </div>
     <Footer/>
     </div>
   );
