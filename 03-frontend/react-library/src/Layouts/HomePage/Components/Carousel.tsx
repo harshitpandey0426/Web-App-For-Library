@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react'
 import BookModel from '../../../models/BookModel'
 import SpinnerLoading from './../../Utils/SpinnerLoading'
 import { error } from 'console';
-import { NavLink } from 'react-router-dom';
+import { NavLink, Link } from 'react-router-dom';
 
 function Carousel() {
     //BookModel[] is the type of books, not required to mention but helps in understanding and catching error
