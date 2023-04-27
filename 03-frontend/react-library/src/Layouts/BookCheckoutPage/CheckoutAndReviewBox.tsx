@@ -55,12 +55,12 @@ function CheckoutAndReviewBox(props:CheckoutAndReviewBoxProps) {
                         </h4>
                     }
                     <div className='row'>
-                        <p className='col-6 lead'>
-                            <b> {props.book?.copies} </b>
+                        <p className='col-6 text-start'>
+                            <b>{props.book?.copies} </b>
                             copies
                         </p>
-                        <p className='col-6 lead'>
-                            <b> {props.book?.copiesAvailable} </b>
+                        <p className='col-6 text-end'>
+                            <b>{props.book?.copiesAvailable} </b>
                             available
                         </p>
                     </div>
