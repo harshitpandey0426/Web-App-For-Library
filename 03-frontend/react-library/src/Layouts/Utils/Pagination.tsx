@@ -8,7 +8,7 @@ type PaginationProps = {
 
 function Pagination(props: PaginationProps) {
 
-    const pageNumbers = [];
+    const pageNumbers: number[] = [];
     if (props.currentPage === 1) {
         pageNumbers.push(props.currentPage);
         if (props.totalPages >= props.currentPage + 1) {

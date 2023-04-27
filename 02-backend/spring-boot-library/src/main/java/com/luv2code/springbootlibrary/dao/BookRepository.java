@@ -8,6 +8,6 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 public interface BookRepository extends JpaRepository<Book, Long> {
     // spring follows naming convention and this method should also follow that convention
-    Page<Book> findByTitle(@RequestParam("title") String title, Pageable Pageable);
+    Page<Book> findByTitleContaining(@RequestParam("title") String title, Pageable Pageable);
     Page<Book> findByCategory(@RequestParam("category") String category, Pageable Pageable);
 }
