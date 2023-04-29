@@ -7,6 +7,8 @@ import ReviewModel from '../../models/ReviewModel';
 import { LatestReviews } from './LatestReview';
 
 function BookCheckoutPage() {
+    
+
     const [book, setBook] = useState<BookModel>();
     const [isLoading, setIsLoading] = useState(true);
     const [httpError, setHttpError] = useState(null);
@@ -30,6 +32,7 @@ function BookCheckoutPage() {
     const bookId = (window.location.pathname).split('/')[2];
 
     useEffect(() => {
+        
         const fetchBook = async () => {
             const baseUrl: string = `http://localhost:8080/api/books/${bookId}`;
 
