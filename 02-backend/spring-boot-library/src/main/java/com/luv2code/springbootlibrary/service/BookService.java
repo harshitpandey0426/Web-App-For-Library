@@ -4,7 +4,7 @@ import com.luv2code.springbootlibrary.dao.BookRepository;
 import com.luv2code.springbootlibrary.dao.CheckoutRepository;
 import com.luv2code.springbootlibrary.entity.Book;
 import com.luv2code.springbootlibrary.entity.Checkout;
-import jakarta.transaction.Transactional;
+import javax.transaction.Transactional;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDate;
@@ -54,6 +54,9 @@ public class BookService {
         } else {
             return false;
         }
+    }
+    public int currentLoansCount(String userEmail) {
+        return checkoutRepository.findBooksByUserEmail(userEmail).size();
     }
 
 }
