@@ -1,5 +1,5 @@
 # Web Application for Library Store
-This project is a web application built with React and Spring Boot. 
+This is a web application built with React and Spring Boot. 
 Application has features where user can
 * See the available books
 * Leave a review for book
